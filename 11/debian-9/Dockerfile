@@ -7,6 +7,8 @@ RUN bitnami-pkg install python-3.6.8-2 --checksum 2eb057ee7701667327f6bcc1fc8765
 RUN bitnami-pkg install postgresql-client-10.7.0-1 --checksum a351a3ea00d4443bdc6892e5f9d45aaf2fbbdf7c2aa40ab6cf423c78d535cca1
 RUN bitnami-pkg install node-7.10.1-1 --checksum 53362288e961d298a724353710a31901d4cb8237894a26a2f676b35450c02975
 RUN bitnami-pkg unpack odoo-11.0.20190415-0 --checksum 5de167ce30a0dd3f68c106e2bc8edaf0b93437a44f3595b1b131f1b0295d14e3
+RUN curl -SsLO https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb
+RUN apt install -f ./wkhtmltox_0.12.5-1.stretch_amd64.deb
 
 COPY rootfs /
 ENV BITNAMI_APP_NAME="odoo" \
